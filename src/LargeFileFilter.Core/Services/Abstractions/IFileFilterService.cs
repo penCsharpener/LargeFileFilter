@@ -1,7 +1,6 @@
-﻿namespace LargeFileFilter.Core.Services.Abstractions
+﻿namespace LargeFileFilter.Core.Services.Abstractions;
+
+public interface IFileFilterService
 {
-    public interface IFileFilterService
-    {
-        Task FilterFileAsync(string pathToFile, CancellationToken cancellationToken = default);
-    }
+    Task FilterFileAsync(string pathToFile, CancellationToken cancellationToken = default);
 }

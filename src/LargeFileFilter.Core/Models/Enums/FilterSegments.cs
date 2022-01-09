@@ -1,10 +1,10 @@
-﻿namespace LargeFileFilter.Core.Models;
+﻿namespace LargeFileFilter.Core.Models.Enums;
 
 public enum FilterSegments
 {
     StartsWith,
-    EndsWith,
     StartsNotWith,
+    EndsWith,
     EndsNotWith,
     Contains,
     ContainsNot,

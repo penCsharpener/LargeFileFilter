@@ -1,9 +1,9 @@
-﻿using System.IO.Abstractions;
-using LargeFileFilter.Core.Models.Settings;
+﻿using LargeFileFilter.Core.Models.Settings;
 using LargeFileFilter.Core.Services;
 using LargeFileFilter.Core.Services.Abstractions;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.IO.Abstractions;
 
 namespace LargeFileFilter.Core.Extensions
 {
@@ -15,8 +15,9 @@ namespace LargeFileFilter.Core.Extensions
 
             services.AddSingleton(appSettings);
             services.AddScoped<IFileFilterService, FileFilterService>();
+            services.AddScoped<IFilterItemParser, FilterItemParser>();
             services.AddScoped<IFileSystem, FileSystem>();
-            services.AddScoped<ILineEvaluator, LineEvaluator>();
+            services.AddScoped<ILineEvaluator, SwitchFilterEvaluator>();
             services.AddScoped<IEvaluatorFactory, EvaluatorFactory>();
 
             return services;

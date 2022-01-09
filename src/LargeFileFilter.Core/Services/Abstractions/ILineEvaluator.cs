@@ -1,7 +1,6 @@
-﻿namespace LargeFileFilter.Core.Services.Abstractions
+﻿namespace LargeFileFilter.Core.Services.Abstractions;
+
+public interface ILineEvaluator
 {
-    public interface ILineEvaluator
-    {
-        bool IncludeLine(string line);
-    }
+    bool IncludeLine(string line);
 }
